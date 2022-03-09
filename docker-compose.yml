@@ -11,9 +11,14 @@ services:
     container_name: express-test-docker
   mongo:
     image: mongo:latest
+    volumes:
+      - "./data:/data/db"
     networks:
       - internal
 
 networks:
   internal:
+
+volumes:
+  mongo-volume:
 
